@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax 1 - text file</title>
+</head>
+<body>
+    <button id="bn"> Get text now</button> 
+  
+        <!-- js part here -->
+    <script> 
+      // create a function to make ajax call 
+    
+       // create evenlistener  
+
+document.getElementById('bn').addEventListener('click',loadtext) ; 
+
+function loadtext(){
+ //  1create XHR OBJECT  
+ var xhr= new XMLHttpRequest();  
+ // 2 open >> type ,url/file , async  
+ xhr.open('GET','sample.txt',true) ;
+
+ // onload 
+
+ xhr.onload=function(){
+         if(this.status==200)
+         {
+           console.log(this.responseText);
+         }
+    } 
+   // send request 
+    xhr.send(); 
+
+} 
+// http status 
+// 200 : OK 
+// 403 : Forbidden 
+// 404 : Not Found
+
+    </script>
+</body>
+</html>
